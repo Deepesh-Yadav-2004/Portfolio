@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-    <title>Massively by HTML5 UP</title>
+    <title>Deepesh Yadav - Portfolio</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <style>
@@ -15,9 +15,11 @@
             font-family: "Source Sans Pro", Helvetica, sans-serif;
             line-height: 1.65;
             color: #ffffff;
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #1e3c72 100%);
+            background: url(images/bg.jpg);
             background-attachment: fixed;
             overflow-x: hidden;
+            position: relative;
+            min-height: 100vh;
         }
 
         .fade-in {
@@ -50,7 +52,6 @@
             text-align: center;
             padding: 2rem;
             position: relative;
-            background: linear-gradient(135deg, #2c3e50 0%, #34495e 50%, #2c3e50 100%);
         }
 
         #intro h1 {
@@ -58,8 +59,9 @@
             font-weight: 900;
             letter-spacing: 0.1em;
             margin-bottom: 2rem;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
             animation: slideInFromTop 1.5s ease-out;
+            background-clip: text;
         }
 
         @keyframes slideInFromTop {
@@ -77,9 +79,10 @@
             font-size: clamp(1rem, 2.5vw, 1.2rem);
             max-width: 900px;
             margin: 0 auto 3rem;
-            opacity: 0.9;
+            opacity: 0.95;
             line-height: 1.8;
             animation: slideInFromBottom 1.5s ease-out 0.5s both;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
         }
 
         @keyframes slideInFromBottom {
@@ -104,19 +107,21 @@
             justify-content: center;
             width: 60px;
             height: 60px;
-            border: 2px solid #ffffff;
+            border: 2px solid rgba(255, 255, 255, 0.8);
             border-radius: 50%;
             color: #ffffff;
             text-decoration: none;
-            transition: all 0.3s ease;
+            transition: all 0.4s ease;
             font-size: 1.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
         }
 
         .button:hover {
-            background: #ffffff;
-            color: #2c3e50;
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(255, 255, 255, 0.2);
+            border-color: #ffffff;
         }
 
         /* Header */
@@ -125,8 +130,9 @@
             top: 0;
             left: 0;
             width: 100%;
-            background: rgba(44, 62, 80, 0.95);
-            backdrop-filter: blur(10px);
+            background: rgba(26, 37, 47, 0.15);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
             z-index: 1000;
             padding: 1rem 0;
             transition: all 0.3s ease;
@@ -182,11 +188,12 @@
             border: 2px solid transparent;
             transition: all 0.3s ease;
             position: relative;
+            border-radius: 25px;
         }
 
         #nav .links .active a,
         #nav .links a:hover {
-            border: 2px solid #ffffff;
+            border: 2px solid rgba(255, 255, 255, 0.6);
             background: rgba(255, 255, 255, 0.1);
         }
 
@@ -203,10 +210,13 @@
             text-decoration: none;
             font-size: 1.2rem;
             transition: all 0.3s ease;
+            padding: 0.5rem;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
         }
 
         #nav .icons a:hover {
-            color: #3498db;
+            background: rgba(255, 255, 255, 0.2);
             transform: translateY(-2px);
         }
 
@@ -219,12 +229,14 @@
 
         /* Featured Post */
         .post.featured {
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 15px;
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
             margin-bottom: 4rem;
-            color: #333;
+            color: #ffffff;
             transform: translateY(50px);
             opacity: 0;
             animation: slideUpFade 1s ease-out 2.5s both;
@@ -237,10 +249,22 @@
             }
         }
 
+        .post.featured .image.main {
+            height: 400px;
+            overflow: hidden;
+        }
+
         .post.featured .image.main img {
             width: 100%;
-            height: 400px;
+            height: 100%;
             object-fit: cover;
+            transition: transform 0.5s ease;
+            display: block;
+            opacity: 1;
+        }
+
+        .post.featured:hover .image.main img {
+            transform: scale(1.05);
         }
 
         .post.featured header {
@@ -252,7 +276,7 @@
             font-size: clamp(2rem, 4vw, 3rem);
             font-weight: 700;
             margin-bottom: 1.5rem;
-            color: #2c3e50;
+            color: #ffffff;
         }
 
         .post.featured h2 a {
@@ -263,7 +287,7 @@
         .post.featured p {
             font-size: 1.1rem;
             line-height: 1.8;
-            color: #666;
+            color: rgba(255, 255, 255, 0.9);
             margin-bottom: 2rem;
         }
 
@@ -273,22 +297,26 @@
         }
 
         .post.featured .button.large {
-            background: linear-gradient(135deg, #3498db, #2980b9);
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1));
             color: #ffffff;
-            padding: 0.8rem 2rem;
-            border: none;
-            border-radius: 25px;
+            padding: 1rem 3rem;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 30px;
             font-weight: 600;
             text-decoration: none;
-            transition: all 0.3s ease;
+            transition: all 0.4s ease;
             display: inline-block;
             width: auto;
             height: auto;
+            backdrop-filter: blur(10px);
+            margin-top: 2rem;
         }
 
         .post.featured .button.large:hover {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.2));
             transform: translateY(-3px);
-            box-shadow: 0 15px 35px rgba(52, 152, 219, 0.4);
+            box-shadow: 0 15px 35px rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.5);
         }
 
         /* Posts Grid */
@@ -300,15 +328,20 @@
         }
 
         .posts article {
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 15px;
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
-            color: #333;
-            transition: all 0.3s ease;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+            color: #ffffff;
+            transition: all 0.4s ease;
             transform: translateY(30px);
             opacity: 0;
             animation: staggeredSlideUp 0.8s ease-out both;
+            height: 550px;
+            display: flex;
+            flex-direction: column;
         }
 
         .posts article:nth-child(1) { animation-delay: 3s; }
@@ -327,14 +360,24 @@
 
         .posts article:hover {
             transform: translateY(-10px);
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+            background: rgba(26, 37, 47, 0.25);
+            border-color: rgba(255, 255, 255, 0.15);
+        }
+
+        .posts article .image.fit {
+            height: 250px;
+            overflow: hidden;
+            flex-shrink: 0;
         }
 
         .posts article .image.fit img {
             width: 100%;
-            height: 250px;
+            height: 100%;
             object-fit: cover;
-            transition: transform 0.3s ease;
+            transition: transform 0.4s ease;
+            display: block;
+            opacity: 1;
         }
 
         .posts article:hover .image.fit img {
@@ -343,18 +386,19 @@
 
         .posts article header {
             padding: 2rem 2rem 1rem;
+            flex-grow: 1;
+            display: flex;
+            align-items: center;
         }
 
         .posts article h2 {
-            font-size: clamp(1.2rem, 2.5vw, 1.4rem);
+            font-size: clamp(1.1rem, 2.5vw, 1.3rem);
             font-weight: 600;
-            margin-bottom: 1rem;
-            color: #2c3e50;
+            margin: 0;
+            color: #ffffff;
             line-height: 1.3;
-            min-height: 3.5rem;
-            display: flex;
-            align-items: center;
             text-align: center;
+            width: 100%;
         }
 
         .posts article h2 a {
@@ -364,38 +408,47 @@
 
         .posts article p {
             padding: 0 2rem;
-            color: #666;
+            color: rgba(255, 255, 255, 0.8);
             line-height: 1.6;
-            margin-bottom: 2rem;
+            margin-bottom: auto;
+            flex-grow: 1;
+            display: flex;
+            align-items: center;
         }
 
         .posts article .actions {
-            padding: 0 2rem 2rem;
+            padding: 2rem;
             text-align: center;
+            margin-top: auto;
         }
 
         .posts article .button {
-            background: linear-gradient(135deg, #3498db, #2980b9);
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1));
             color: #ffffff;
             padding: 0.8rem 2rem;
-            border: none;
+            border: 2px solid rgba(255, 255, 255, 0.3);
             border-radius: 25px;
             font-weight: 600;
             text-decoration: none;
-            transition: all 0.3s ease;
+            transition: all 0.4s ease;
             display: inline-block;
             width: auto;
             height: auto;
+            backdrop-filter: blur(10px);
         }
 
         .posts article .button:hover {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.2));
             transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(52, 152, 219, 0.4);
+            box-shadow: 0 10px 25px rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.5);
         }
 
         /* Footer */
         #footer {
-            background: rgba(44, 62, 80, 0.95);
+            background: rgba(26, 37, 47, 0.25);
+            backdrop-filter: blur(25px);
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
             padding: 4rem 2rem 2rem;
             margin-top: 6rem;
         }
@@ -417,8 +470,9 @@
 
         .split.contact section p,
         .split.contact section a {
-            color: #bdc3c7;
+            color: rgba(255, 255, 255, 0.8);
             text-decoration: none;
+            transition: color 0.3s ease;
         }
 
         .split.contact section a:hover {
@@ -433,21 +487,26 @@
         }
 
         .icons.alt a {
-            color: #bdc3c7;
+            color: rgba(255, 255, 255, 0.8);
             font-size: 1.2rem;
-            transition: color 0.3s ease;
+            transition: all 0.3s ease;
+            padding: 0.5rem;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
         }
 
         .icons.alt a:hover {
-            color: #3498db;
+            color: #ffffff;
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
         }
 
         #copyright {
             text-align: center;
             margin-top: 2rem;
             padding-top: 2rem;
-            border-top: 1px solid #555;
-            color: #95a5a6;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            color: rgba(255, 255, 255, 0.7);
         }
 
         /* Responsive Design */
@@ -479,6 +538,10 @@
             #main {
                 padding: 2rem 1rem;
             }
+
+            .posts article {
+                height: auto;
+            }
         }
 
         @media (max-width: 480px) {
@@ -501,6 +564,11 @@
         html {
             scroll-behavior: smooth;
         }
+
+        /* Smooth scroll button specific */
+        .scrolly {
+            cursor: pointer;
+        }
     </style>
 </head>
 <body class="is-preload">
@@ -511,20 +579,20 @@
         <div id="intro">
             <h1>DEEPESH<br />YADAV</h1>
             <p>Aspiring Product Analyst with skills in Python, SQL, Power BI, and data storytelling blending analytics and product thinking to turn insights into impactful decisions.</p>
-            <ul class="actions">
-                <li><a href="#header" class="button icon solid solo fa-arrow-down scrolly">↓</a></li>
-            </ul>
+            <!-- <ul class="actions">
+                <li><a href="#header" class="button icon solid solo fa-arrow-down scrolly">↓</a></li
+            </ul> -->
         </div>
 
         <!-- Header -->
-        <header id="header">
+        <!-- <header id="header">
             <a href="index.html" class="logo">DEEPESH YADAV</a>
-        </header>
+        </header> -->
 
         <!-- Nav -->
         <nav id="nav">
             <ul class="links">
-                <li class="active"><a href="index.html">PROJECTS</a></li>
+                <li class="active"><a href="">PROJECTS</a></li>
             </ul>
             <ul class="icons">
                 <li><a href="https://www.linkedin.com/in/deepesh-yadav-b2b981291/" target="_blank" rel="noopener noreferrer" class="icon brands fa-linkedin">💼</a></li>
@@ -539,9 +607,7 @@
             <article class="post featured">
                 <header class="major">
                     <h2><a href="#">DATA CLEANING IN SQL</a></h2>
-                    <p>Aenean ornare velit lacus varius enim ullamcorper proin aliquam<br />
-                    facilisis ante sed etiam magna interdum congue. Lorem ipsum dolor<br />
-                    amet nullam sed etiam veroeros.</p>
+                    <p>Comprehensive data cleaning project demonstrating advanced SQL techniques for data preprocessing, validation, and transformation to ensure data quality and consistency for analytical workflows.</p>
                 </header>
                 <a href="#" class="image main"><img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=400&fit=crop" alt="Data Cleaning SQL" /></a>
                 <ul class="actions special">
@@ -556,17 +622,17 @@
                         <h2><a href="#">DATA EXPLORATION IN SQL</a></h2>
                     </header>
                     <a href="#" class="image fit"><img src="https://images.unsplash.com/photo-1584036561566-baf8f5f1b144?w=400&h=250&fit=crop" alt="COVID Data Analysis" /></a>
-                    <p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis magna etiam.</p>
+                    <p>Exploratory data analysis using SQL to uncover patterns, trends, and insights from complex datasets through advanced querying techniques and statistical analysis.</p>
                     <ul class="actions special">
                         <li><a href="#" class="button">VIEW PROJECT</a></li>
                     </ul>
                 </article>
                 <article>
                     <header>
-                        <h2><a href="#">DATA ANALYSIS ON ROAD ACCIDENT IN PYTHON</a></h2>
+                        <h2><a href="#">ROAD ACCIDENT ANALYSIS IN PYTHON</a></h2>
                     </header>
                     <a href="#" class="image fit"><img src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=400&h=250&fit=crop" alt="Road Accident Analysis" /></a>
-                    <p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis magna etiam.</p>
+                    <p>Python-based analysis of road accident data using pandas, matplotlib, and seaborn to identify risk factors and create actionable insights for traffic safety improvements.</p>
                     <ul class="actions special">
                         <li><a href="#" class="button">VIEW PROJECT</a></li>
                     </ul>
@@ -576,7 +642,7 @@
                         <h2><a href="#">BLINKIT ANALYSIS IN EXCEL</a></h2>
                     </header>
                     <a href="#" class="image fit"><img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=250&fit=crop" alt="Excel Analysis" /></a>
-                    <p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis magna etiam.</p>
+                    <p>Comprehensive business intelligence analysis of Blinkit's operational data using Excel's advanced features including pivot tables, formulas, and visualization tools.</p>
                     <ul class="actions special">
                         <li><a href="#" class="button">VIEW PROJECT</a></li>
                     </ul>
@@ -586,17 +652,17 @@
                         <h2><a href="#">DATA CLEANING IN PYTHON</a></h2>
                     </header>
                     <a href="#" class="image fit"><img src="https://images.unsplash.com/photo-1518186285589-2f7649de83e0?w=400&h=250&fit=crop" alt="Python Data Cleaning" /></a>
-                    <p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis magna etiam.</p>
+                    <p>Automated data preprocessing pipeline built with Python using pandas and numpy to handle missing values, outliers, and data inconsistencies efficiently.</p>
                     <ul class="actions special">
                         <li><a href="#" class="button">VIEW PROJECT</a></li>
                     </ul>
                 </article>
                 <article>
                     <header>
-                        <h2><a href="#">BLINKIT ANALYSIS IN POWERBI</a></h2>
+                        <h2><a href="#">BLINKIT ANALYSIS IN POWER BI</a></h2>
                     </header>
                     <a href="#" class="image fit"><img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=250&fit=crop" alt="Power BI Dashboard" /></a>
-                    <p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis magna etiam.</p>
+                    <p>Interactive Power BI dashboard showcasing Blinkit's key performance metrics with dynamic visualizations and real-time data insights for strategic decision making.</p>
                     <ul class="actions special">
                         <li><a href="#" class="button">VIEW PROJECT</a></li>
                     </ul>
@@ -606,7 +672,7 @@
                         <h2><a href="#">BLINKIT ANALYSIS IN PYTHON</a></h2>
                     </header>
                     <a href="#" class="image fit"><img src="https://images.unsplash.com/photo-1526379095098-d400fd0bf935?w=400&h=250&fit=crop" alt="Python Analysis" /></a>
-                    <p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis magna etiam.</p>
+                    <p>End-to-end data analysis of Blinkit's business metrics using Python's data science stack including statistical modeling and predictive analytics.</p>
                     <ul class="actions special">
                         <li><a href="#" class="button">VIEW PROJECT</a></li>
                     </ul>
@@ -624,7 +690,7 @@
                 </section>
                 <section>
                     <h3>Contact :</h3>
-                    <p><a href="#">+91 9136004637</a></p>
+                    <p><a href="tel:+919136004637">+91 9136004637</a></p>
                 </section>
                 <section>
                     <h3>Email :</h3>
@@ -642,42 +708,74 @@
 
         <!-- Copyright -->
         <div id="copyright">
-            <ul><li>&copy; </li><li>Design By: DEEPESH</li></ul>
+            <ul><li>&copy; 2024 DEEPESH YADAV</li><li>All Rights Reserved</li></ul>
         </div>
 
     </div>
 
     <script>
-        // Smooth scrolling for navigation links
+        // Enhanced smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
+                    const headerHeight = document.querySelector('#header').offsetHeight;
+                    const targetPosition = target.offsetTop - headerHeight - 20;
+                    
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
                     });
                 }
             });
         });
 
-        // Header scroll effect
+        // Header scroll effect with enhanced backdrop
         window.addEventListener('scroll', () => {
             const header = document.querySelector('#header');
             if (window.scrollY > 100) {
-                header.style.background = 'rgba(44, 62, 80, 0.98)';
+                header.style.background = 'rgba(26, 37, 47, 0.25)';
+                header.style.backdropFilter = 'blur(25px)';
             } else {
-                header.style.background = 'rgba(44, 62, 80, 0.95)';
+                header.style.background = 'rgba(26, 37, 47, 0.15)';
+                header.style.backdropFilter = 'blur(20px)';
             }
         });
 
-        // Add parallax effect to intro
+        // Reduced parallax effect for better performance
+        let ticking = false;
         window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            const intro = document.querySelector('#intro');
-            const rate = scrolled * -0.5;
-            intro.style.transform = `translateY(${rate}px)`;
+            if (!ticking) {
+                requestAnimationFrame(() => {
+                    const scrolled = window.pageYOffset;
+                    const intro = document.querySelector('#intro');
+                    const rate = scrolled * -0.2;
+                    intro.style.transform = `translateY(${rate}px)`;
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        });
+
+        // Add intersection observer for enhanced animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.transform = 'translateY(0)';
+                    entry.target.style.opacity = '1';
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements that should animate on scroll
+        document.querySelectorAll('.post, .posts article').forEach(el => {
+            observer.observe(el);
         });
     </script>
 </body>
